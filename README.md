@@ -4,6 +4,8 @@ Select a word or passage in NeoReader, KOReader or any Android reading app and T
 
 Bring your own AI: the ChatGPT or Claude website with your normal account, any API key you already have, or a model running on your own computer for free.
 
+> **KOReader users: you need the Tank plugin.** KOReader only sends words to its own fixed list of dictionary apps, so the Tank app can't plug in by itself. Install `tank.koplugin` (see [KOReader](#koreader) below) and you get an **Ask Tank** button in the selection menu. On Android it opens the Tank app; on Kobo, Kindle and PocketBook it answers on its own through an API key or a local model.
+
 <p>
   <img src="docs/answer.png" width="45%" alt="Tank answering a lookup on an e-ink screen">
   <img src="docs/settings.png" width="45%" alt="Tank settings: choose the AI">
