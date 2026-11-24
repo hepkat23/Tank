@@ -1,6 +1,6 @@
-# Tank: a reading companion for BOOX e-readers
+# Tank: an AI reading companion for e-readers
 
-Select a word or passage in NeoReader and Tank explains it **in the context of the book you're reading**: which chapter you're in, what's going on, no spoilers past your page. Every book keeps its own conversation, so follow-up questions remember everything you asked before.
+Select a word or passage in NeoReader, KOReader or any Android reading app and Tank explains it **in the context of the book you're reading**: which chapter you're in, what's going on, no spoilers past your page. Every book keeps its own conversation, so follow-up questions remember everything you asked before.
 
 Bring your own AI: the ChatGPT or Claude website with your normal account, any API key you already have, or a model running on your own computer for free.
 
@@ -10,6 +10,11 @@ Bring your own AI: the ChatGPT or Claude website with your normal account, any A
 </p>
 
 > Named after the Operator who loads what you need to know straight into your head.
+
+## Two parts
+
+- **Tank app (Android):** works with BOOX NeoReader (as the "other dictionary"), with KOReader on Android (through the plugin below), and with any app's text-selection or Share menu. It's the only way to use the ChatGPT or Claude **website** without an API key.
+- **Tank plugin for KOReader** (`tank.koplugin`): adds **Ask Tank** to KOReader's selection menu. On Android it hands the selection to the Tank app; on Kobo, Kindle, PocketBook and other KOReader devices it answers by itself through an API key or a local model, with one chat per book saved in the book's KOReader sidecar.
 
 ## What it does
 
@@ -41,6 +46,12 @@ API keys stay on the device (app storage, backups disabled). Every API option sh
 3. In NeoReader, select a word → dictionary → choose **Tank** as the other dictionary.
 4. Tap the AI button at the top of Tank (e.g. **ChatGPT ▾**) to pick your AI.
 
+### KOReader
+
+1. Download `tank.koplugin.zip` from [Releases](../../releases) and unzip it into KOReader's `plugins` folder (on Android: `koreader/plugins/`; on Kobo: `.adds/koreader/plugins/`).
+2. Restart KOReader fully (menu → Exit → Restart).
+3. Select text → **Ask Tank**. Choose where answers come from in the search menu (🔍) → **Tank**: the Tank app (Android), an API service, or a local model.
+
 ### Local AI over Wi-Fi
 
 - **LM Studio:** Developer tab → start the server and enable *Serve on Local Network*. In Tank, set the address to `http://<your-computer-ip>:1234/v1` and tap *Choose model from server*.
@@ -48,12 +59,12 @@ API keys stay on the device (app storage, backups disabled). Every API option sh
 
 ## Tested on
 
-BOOX Go Color 7 (Gen II), firmware 4.2 and 4.3.1, NeoReader. Other BOOX models with NeoReader should work; reports welcome.
+BOOX Go Color 7 (Gen II), firmware 4.2 and 4.3.1, NeoReader. Bigme HiBreak Pro with KOReader v2026.07. Other devices should work; reports welcome.
 
 ## Limits
 
 - Passages are found in EPUBs only. PDFs and other formats send just the selection.
-- Book detection uses NeoReader's library database; other reading apps send just the selection.
+- Book detection uses NeoReader's library database or KOReader's settings; other reading apps send just the selection.
 - The website modes depend on the sites' current layout and may need updates when they change. The API modes don't.
 
 ## Build
