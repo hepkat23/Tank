@@ -8,7 +8,7 @@ import java.util.zip.ZipFile
 data class Passage(val chapter: String?, val text: String, val selection: String)
 
 object PassageFinder {
-    private const val RADIUS = 600
+    private const val RADIUS = 300
 
     /**
      * Finds [selection] in the book. A phrase can appear many times, so every match is collected

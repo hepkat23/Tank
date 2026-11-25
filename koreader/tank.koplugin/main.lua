@@ -133,7 +133,9 @@ function Tank:intro()
     local by = authors and authors ~= "" and (" by " .. authors:gsub("\n", ", ")) or ""
     return title .. by .. "\n\n"
         .. "I'm reading this book and will send you words and passages as I go. "
-        .. "For each one, explain what it means here, in the context of the book, briefly and in English. "
+        .. "For each one, explain only the selected words: what they mean here, in the context of the book, in a few sentences, in English. "
+        .. "The passage around them is background only: use it to understand the selection, but don't summarise or interpret the rest of it. "
+        .. "If I add a question, answer that question. "
         .. "Don't spoil anything past the page I'm on."
 end
 
@@ -145,7 +147,7 @@ function Tank:lookup(text, before, after)
     if chapter and chapter ~= "" then table.insert(where, '"' .. chapter .. '"') end
     local out = (#where > 0 and (table.concat(where, " · ") .. "\n") or "") .. 'Selected: "' .. text .. '"'
     if (before and before ~= "") or (after and after ~= "") then
-        out = out .. "\n\nPassage:\n" .. (before or "") .. " " .. text .. " " .. (after or "")
+        out = out .. "\n\nContext (background only, explain just the selection):\n" .. (before or "") .. " " .. text .. " " .. (after or "")
     end
     return out
 end

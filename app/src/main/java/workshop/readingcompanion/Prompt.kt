@@ -15,7 +15,9 @@ object Prompt {
         book.author?.let { append(" by ").append(it) }
         append("\n\n")
         append("I'm reading this book and will send you words and passages as I go. ")
-        append("For each one, explain what it means here, in the context of the book, briefly and in English. ")
+        append("For each one, explain only the selected words: what they mean here, in the context of the book, in a few sentences, in English. ")
+        append("The passage around them is background only: use it to understand the selection, but don't summarise or interpret the rest of it. ")
+        append("If I add a question, answer that question. ")
         append("Don't spoil anything past the page I'm on.")
     }
 
@@ -26,6 +28,6 @@ object Prompt {
         )
         if (where.isNotEmpty()) append(where.joinToString(" · ")).append("\n")
         append("Selected: \"").append(passage?.selection ?: selection.trim()).append("\"")
-        passage?.text?.let { append("\n\nPassage:\n").append(it) }
+        passage?.text?.let { append("\n\nContext (background only, explain just the selection):\n").append(it) }
     }
 }
