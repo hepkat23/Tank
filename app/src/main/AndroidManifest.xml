@@ -13,6 +13,8 @@
 
     <application
         android:label="Tank"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:usesCleartextTraffic="true"
         android:allowBackup="false"
         android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.NoActionBar">

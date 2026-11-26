@@ -1,5 +1,7 @@
 # Tank: an AI reading companion for e-readers
 
+<p align="center"><img src="docs/tank.jpg" alt="Tank" width="320"></p>
+
 Select a word or passage in NeoReader, KOReader or any Android reading app and Tank explains it **in the context of the book you're reading**: which chapter you're in, what's going on, no spoilers past your page. Every book keeps its own conversation, so follow-up questions remember everything you asked before.
 
 Bring your own AI: the ChatGPT or Claude website with your normal account, any API key you already have, or a model running on your own computer for free.
